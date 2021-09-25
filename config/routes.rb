@@ -1,4 +1,4 @@
-Rails.application.routes.draw do https://guides.rubyonrails.org/routing.html
+Rails.application.routes.draw do
   root to: 'lists#index'
   resources :lists, except: :index do
     resources :bookmarks
