@@ -1,0 +1,14 @@
+<h1>My movies</h1>
+
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title %>
+  <%= f.input :overview %>
+  <%= f.input :poster_url %>
+  <%= f.button :submit %>
+<% end %>
+
+<% @movies.each do |movie| %>
+    <%= movie.title %>
+    <%= movie.overview %>
+  <%= link_to 'X', movie_path(movie), method: :delete %>
+<% end %>
