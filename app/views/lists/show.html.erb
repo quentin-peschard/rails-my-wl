@@ -1,1 +1,8 @@
 <h1><%= @list.name %></h1>
+
+<%= simple_form_for @bookmark, @movies do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating %>
+  <%= f.input :movie_id, collection: Application::MOVIE, prompt: :translate %>
+  <%= f.button :submit %>
+<% end %>
