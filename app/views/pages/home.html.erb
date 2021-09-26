@@ -1,11 +1,11 @@
-<h1>My lists (<%= @lists.count %>)</h1>
+<h1>My lists</h1>
 
 <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
   <%= f.button :submit %>
 <% end %>
 
-<% if @lists.any? %>
+<% if @lists != nil %>
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
       <%= list.name %>
