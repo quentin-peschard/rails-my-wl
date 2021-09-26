@@ -9,18 +9,19 @@ class ListsController < ApplicationController
   end
 
   def create
+    @lists = List.all
     @list = List.new(list_params)
     if @list.save
-      redirect_to root_path
+      redirect_to lists_path
     else
-      render 'pages/home'
+      render 'lists/index'
     end
   end
 
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to root_path
+    redirect_to lists_path
   end
 
   private
