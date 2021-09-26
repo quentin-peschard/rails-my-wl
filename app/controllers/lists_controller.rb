@@ -13,7 +13,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to root_path
     else
-      render 'new'
+      render 'lists/index'
     end
   end
 

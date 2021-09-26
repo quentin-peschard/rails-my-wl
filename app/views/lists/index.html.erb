@@ -1,13 +1,17 @@
-<h1>Hello world</h1>
+<h1>My lists (<%= @lists.count %>)</h1>
 
 <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
   <%= f.button :submit %>
 <% end %>
 
-<% @lists.each do |list| %>
-  <%= link_to list_path(list) do %>
-    <%= list.name %>
+<% if @lists.any? %>
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <%= list.name %>
+    <% end %>
+    <%= link_to 'X', list_path(list), method: :delete %>
   <% end %>
-  <%= link_to 'X', list_path(list), method: :delete %>
+<% else %>
+  <p>Create your first list</p>
 <% end %>
