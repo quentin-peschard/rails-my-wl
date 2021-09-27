@@ -10,5 +10,6 @@
 <% @movies.each do |movie| %>
     <%= movie.title %>
     <%= movie.overview %>
+    <img src="<%= movie.poster_url %>" style="width: 200px;">
   <%= link_to 'X', movie_path(movie), method: :delete %>
 <% end %>
