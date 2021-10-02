@@ -1,6 +1,19 @@
 <div id="home-background">
   <div class="content">
-    <%= link_to "My watchlists", lists_path %>
-    <%= link_to "My movies", movies_path %>
+    <div class="home-title">
+      <h1>What can I watch ?</h1>
+      <p>Here, we're doing our best to find an answer to this dreadful question </p>
+      <p>Look for a movie you liked and we'll come up with tons of watchlists for you to get inspired</p>
+    </div>
+    <div class="home-links">
+        <%= link_to lists_path do %>
+          <div class="card-category">
+            Look at the watchlists
+          </div>
+        <% end %>
+        <div class="movies-button">
+          <%= link_to "Our movie list", movies_path %>
+        </div>
+    </div>
   </div>
 </div>

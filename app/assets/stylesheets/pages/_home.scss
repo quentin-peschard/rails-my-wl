@@ -9,3 +9,25 @@
 .content {
   padding: 100px 30px;
 }
+
+.home-title {
+  color: white;
+  padding: 100px;
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 22px;
+    opacity: 0.7;
+  }
+}
+
+.home-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
