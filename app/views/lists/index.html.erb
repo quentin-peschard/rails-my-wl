@@ -3,16 +3,20 @@
   <div class="list-view">
     <div class="list-left">
       <% @lists.each do |list| %>
-        <%= link_to list_path(list) do %>
-          <%= list.name %>
-        <% end %>
-        <%= link_to 'X', list_path(list), method: :delete %>
+        <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.background_url %>)">
+          <%= link_to list_path(list) do %>
+            <h2><%= list.name %></h2>
+          <% end %>
+          <div class="card-delete">
+            <%= link_to '✕', list_path(list), method: :delete %>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="list-right">
       <%= simple_form_for @list do |f| %>
-        <%= f.input :name %>
-        <%= f.input :background_url %>
+        <%= f.input :name, placeholder: "My top 5" %>
+        <%= f.input :background_url, label: "Background image", placeholder: "https://my-favorite-img.jpg/" %>
         <%= f.button :submit %>
       <% end %>
     </div>

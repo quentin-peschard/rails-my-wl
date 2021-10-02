@@ -1,15 +1,21 @@
-<h1>My movies</h1>
-
-<%= simple_form_for @movie do |f| %>
-  <%= f.input :title %>
-  <%= f.input :overview %>
-  <%= f.input :poster_url %>
-  <%= f.button :submit %>
-<% end %>
-
-<% @movies.each do |movie| %>
-    <%= movie.title %>
-    <%= movie.overview %>
-    <img src="<%= movie.poster_url %>" style="width: 200px;">
-  <%= link_to 'X', movie_path(movie), method: :delete %>
-<% end %>
+<div class="content">
+  <h1>My movies</h1>
+  <div class="list-view">
+    <div class="list-left">
+      <% @movies.each do |movie| %>
+        <%= movie.title %>
+        <%= movie.overview %>
+        <img src="<%= movie.poster_url %>" style="width: 200px;">
+        <%= link_to 'X', movie_path(movie), method: :delete %>
+      <% end %>
+    </div>
+    <div class="list-right">
+      <%= simple_form_for @movie do |f| %>
+        <%= f.input :title %>
+        <%= f.input :overview %>
+        <%= f.input :poster_url %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

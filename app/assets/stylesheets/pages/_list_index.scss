@@ -1,19 +1,63 @@
 .list-view {
   display: flex;
   justify-content: space-between;
+  padding: 30px 40px;
 }
 
 .list-left {
-  width: 65%;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.list-card {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  h2 {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+.card-delete {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  transition-duration: 0.3s;
+  opacity: 0.7;
+  &:hover {
+    transform: rotate(180deg);
+  }
+  a {
+    color: whitesmoke;
+  }
 }
 
 .list-right {
   width: 25%;
+  height: fit-content;
+  padding: 30px;
+  background: rgba($color: black, $alpha: 0.2);
+  border-radius: 7px;
+  box-shadow: 0 0 30px rgba($color: black, $alpha: 0.07) ;
   #new_list {
-    width: 80%;
     .btn {
       color: whitesmoke;
-      background: brown;
+      background: #5f0509;
       opacity: 0.8;
     }
   }
