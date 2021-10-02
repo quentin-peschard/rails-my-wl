@@ -1,13 +1,20 @@
-<h1>My lists</h1>
-
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
-
-<% @lists.each do |list| %>
-  <%= link_to list_path(list) do %>
-    <%= list.name %>
-  <% end %>
-  <%= link_to 'X', list_path(list), method: :delete %>
-<% end %>
+<div class="content">
+  <h1>My lists</h1>
+  <div class="list-view">
+    <div class="list-left">
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list) do %>
+          <%= list.name %>
+        <% end %>
+        <%= link_to 'X', list_path(list), method: :delete %>
+      <% end %>
+    </div>
+    <div class="list-right">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
+        <%= f.input :background_url %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
