@@ -3,10 +3,12 @@
   <div class="list-view">
     <div class="list-left">
       <% @movies.each do |movie| %>
-        <%= movie.title %>
-        <%= movie.overview %>
-        <img src="<%= movie.poster_url %>" style="width: 200px;">
-        <%= link_to 'X', movie_path(movie), method: :delete %>
+        <div class="card-trip">
+          <img src="<%= movie.poster_url %>" />
+          <div class="card-trip-infos">
+            <h2><%= movie.title %></h2>
+          </div>
+        </div>
       <% end %>
     </div>
     <div class="list-right">

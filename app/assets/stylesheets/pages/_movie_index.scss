@@ -1,0 +1,26 @@
+.card-trip {
+  overflow: hidden;
+  background: rgb(23, 23, 23);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 270px;
+}
+
+.card-trip > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
