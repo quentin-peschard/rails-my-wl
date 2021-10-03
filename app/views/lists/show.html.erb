@@ -1,12 +1,23 @@
-<h1><%= @list.name %></h1>
-
-<%= simple_form_for [@list, @movie, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :rating %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
-
-<% @bookmarks.each do |bookmark| %>
-  <h3><%= bookmark.movie.title %></h3><%=  %>
-<% end %>
+<div class="content">
+  <h1><%= @list.name %></h1>
+  <div class="list-view">
+    <div class="list-left">
+      <% @bookmarks.each do |bookmark| %>
+        <div class="card-trip">
+          <img src="<%= bookmark.movie.poster_url %>" />
+          <div class="card-trip-infos">
+             <h3><%= bookmark.movie.title %></h3><%=  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="list-right">
+      <%= simple_form_for [@list, @movie, @bookmark] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating %>
+        <%= f.association :movie %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
