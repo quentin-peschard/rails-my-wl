@@ -6,7 +6,7 @@ List.destroy_all
 
 puts 'destroying data...'
 
-url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=89e59e174b2592e3189d9ff834c92869'
+url = "https://api.themoviedb.org/3/trending/movie/week?api_key=#{ENV['TMDB_API_KEY']}"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 
