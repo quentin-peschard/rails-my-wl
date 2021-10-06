@@ -6,7 +6,8 @@ List.destroy_all
 
 puts 'destroying data...'
 
-url = "https://api.themoviedb.org/3/trending/movie/week?api_key=#{ENV['TMDB_API_KEY']}"
+api_key = ENV["TMDB_API_KEY"]
+url = "https://api.themoviedb.org/3/trending/movie/week?api_key=#{api_key}"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 
@@ -18,4 +19,4 @@ movies['results'].each do |movie|
                   poster_url: "https://image.tmdb.org/t/p/original/#{movie['poster_path']}" })
 end
 
-puts 'done !'
+puts 'done'
