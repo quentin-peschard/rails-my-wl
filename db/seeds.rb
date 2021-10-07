@@ -11,7 +11,7 @@ url = "https://api.themoviedb.org/3/trending/movie/week?api_key=#{api_key}"
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 
-puts 'getting data...'
+puts 'getting movies...'
 
 movies['results'].each do |movie|
   Movie.create!({ title: movie['original_title'],
