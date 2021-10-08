@@ -49,6 +49,8 @@
 
 .list-right {
   width: 25%;
+  position: sticky;
+  top: 115px;
   height: fit-content;
   padding: 30px;
   background: rgba($color: black, $alpha: 0.2);
