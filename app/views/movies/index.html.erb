@@ -7,6 +7,9 @@
           <img src="<%= movie.poster_url %>" />
           <div class="card-trip-infos">
             <h2><%= movie.title %></h2>
+            <div class="hidden-info d-none">
+              <p><%= movie.overview %></p>
+            </div>
           </div>
         </div>
       <% end %>
