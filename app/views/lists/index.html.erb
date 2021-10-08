@@ -14,9 +14,12 @@
       <% end %>
     </div>
     <div class="list-right">
+      <h5><em>Create your own watchlist</em></h5>
+      <br>
       <%= simple_form_for @list do |f| %>
         <%= f.input :name, placeholder: "My top 5" %>
         <%= f.input :background_url, label: "Background image", placeholder: "https://my-favorite-img.jpg/" %>
+        <br>
         <%= f.button :submit %>
       <% end %>
     </div>

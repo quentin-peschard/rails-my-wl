@@ -12,10 +12,13 @@
       <% end %>
     </div>
     <div class="list-right">
+      <h5><em>Add a movie to the list</em></h5>
+      <br>
       <%= simple_form_for @movie do |f| %>
-        <%= f.input :title %>
-        <%= f.input :overview %>
-        <%= f.input :poster_url %>
+        <%= f.input :title, placeholder: "So Long, my Son" %>
+        <%= f.input :overview, placeholder: "The changes in Chinese society from the 1980s to the present day." %>
+        <%= f.input :poster_url, label: "Poster URL", placeholder: "https://my-favorite-img.jpg/" %>
+        <br>
         <%= f.button :submit %>
       <% end %>
     </div>
