@@ -15,6 +15,7 @@
 .list-card {
   background-size: cover;
   background-position: center;
+  background-color: #5f0509;
   height: 180px;
   display: flex;
   justify-content: center;
@@ -64,6 +65,13 @@
     }
   }
   #new_movie {
+    .btn {
+      color: whitesmoke;
+      background: #5f0509;
+      opacity: 0.8;
+    }
+  }
+  #new_bookmark {
     .btn {
       color: whitesmoke;
       background: #5f0509;

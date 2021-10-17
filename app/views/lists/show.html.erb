@@ -3,10 +3,16 @@
   <div class="list-view">
     <div class="list-left">
       <% @bookmarks.each do |bookmark| %>
-        <div class="card-trip">
+        <div class="card-bookmark">
           <img src="<%= bookmark.movie.poster_url %>" />
-          <div class="card-trip-infos">
-             <h3><%= bookmark.movie.title %></h3><%=  %>
+          <div class="card-bookmark-infos">
+            <div class="first-row">
+              <p><%= bookmark.movie.title %></p>
+              <p><small><em><%= bookmark.rating %></em></small> ⭐️</p>
+            </div>
+            <div class="second-row">
+              <p>💭 <small><em>"<%= bookmark.comment %>"</em></small></p>
+            </div>
           </div>
         </div>
       <% end %>
