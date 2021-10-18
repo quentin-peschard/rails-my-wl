@@ -15,4 +15,12 @@ RSpec.describe ListsController, type: :controller do
       expect(response).to render_template('show')
     end
   end
+
+  describe 'DELETE' do
+    it 'deletes the list I want' do
+      list = List.create!(name: 'Ma fav')
+      delete :destroy, id: post
+      expect { delete :destroy, id: list }.to change { List.count }.by(-1)
+    end
+  end
 end
