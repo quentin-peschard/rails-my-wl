@@ -20,7 +20,7 @@ RSpec.describe ListsController, type: :controller do
     it 'deletes the list I want' do
       list = List.create!(name: 'Ma fav')
       delete :destroy, params: { id: list.to_param }
-      expect(response.status).to eq(302)
+      expect(List.all.count).to eq(0)
     end
   end
 end
